@@ -1,5 +1,5 @@
 ---
-title: "SEMLj computation details"
+title: "ENDOj computation details"
 nickname: computation_details
 topic: semlj
 category: details
@@ -23,11 +23,11 @@ source("../R/constants.R")
 source("../R/functions.R")
 ```
 
-`r keywords("semlj,jamovi,Structural Equation Model ,lavaan,path analysis")`
+`r keywords("endoj,jamovi, instrumental variables regregression")`
 
-**SEMLj** module details
+**ENDOj** module details
 
-`r version("0.3.*")` 
+`r version("0.1.*")` 
 `r draft`
 
 
