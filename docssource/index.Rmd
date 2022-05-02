@@ -36,7 +36,7 @@ Some worked out examples of the analyses carried out with jamovi `r modulename` 
 
 ## In jamovi
 
-<img src="pics/install.png" class="img-responsive" alt="overview" width="600">
+<img src="pics/todo.png" class="img-responsive" alt="overview" width="600">
 
 
 ## Install in R
@@ -45,7 +45,7 @@ To install it in R, simply use:
 
 ```
 
-devtools::install_github("semlj/semlj")
+devtools::install_github("ENDOjamovi/ENDOj")
 
 ```
 

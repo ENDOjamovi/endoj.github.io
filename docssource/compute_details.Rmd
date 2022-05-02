@@ -1,7 +1,7 @@
 ---
 title: "ENDOj computation details"
 nickname: computation_details
-topic: semlj
+topic: help
 category: details
 output: 
   html_document:
