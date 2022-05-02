@@ -1,0 +1,33 @@
+---
+title: "Rosetta storage page"
+topic: r
+category: help
+output: 
+  html_document:
+     includes:
+         in_header: ganalytics.txt
+     toc: true
+     toc_float:
+        collapsed: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r echo=FALSE,results='hide'}
+source("../R/constants.R")
+source("../R/functions.R")
+
+
+```
+
+`r version("0.5.0")` 
+
+# Comparisons with other software or modules
+
+`r list_pages(category="rosetta")`
+
+# Examples
+
+`r include_examples()`
+

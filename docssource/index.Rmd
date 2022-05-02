@@ -1,0 +1,62 @@
+---
+title: "ENDOj: Instrumental variables regression in jamovi"
+output: 
+  html_document:
+    includes:
+         in_header: ganalytics.txt
+
+---
+  
+
+```{r echo=FALSE,results='hide'}
+source("../R/secrets.R")
+source("../R/constants.R")
+source("../R/functions.R")
+```
+  
+
+Instrumental variables regression for jamovi based on R package ivreg.
+
+<img src="pics/overview.png" class="img-responsive" alt="overview" width="600">
+
+## Help
+
+
+Please visti the [Help](help.html) tab for usage information of the module in `r jamovi`. For usage information in R, please visti the 'SEMLj in R' tab.
+
+## Examples
+
+Some worked out examples of the analyses carried out with jamovi `r modulename` are posted in the  [Examples](examples.html) tab (more to come)
+
+`r list_pages(topic="pathj",category = "example")`
+
+
+
+# Installation
+
+## In jamovi
+
+<img src="pics/install.png" class="img-responsive" alt="overview" width="600">
+
+
+## Install in R
+
+To install it in R, simply use:
+
+```
+
+devtools::install_github("semlj/semlj")
+
+```
+
+# Release notes
+
+Please check out the  [Release notes](release_notes.html). 
+
+# Quality control
+
+Please check the [rosetta store](rosetta.html) for alignment with other software results and possible discrepancies.
+
+  
+`r issues()`
+

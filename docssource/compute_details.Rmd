@@ -1,0 +1,42 @@
+---
+title: "SEMLj computation details"
+nickname: computation_details
+topic: semlj
+category: details
+output: 
+  html_document:
+     includes:
+         in_header: ganalytics.txt
+     toc: true
+     toc_float:
+        collapsed: false
+bibliography: 
+     - bib.bib
+link-citations: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r echo=FALSE,results='hide'}
+source("../R/constants.R")
+source("../R/functions.R")
+```
+
+`r keywords("semlj,jamovi,Structural Equation Model ,lavaan,path analysis")`
+
+**SEMLj** module details
+
+`r version("0.3.*")` 
+`r draft`
+
+
+# Introduction
+
+
+
+
+
+`r issues()`
+
+'

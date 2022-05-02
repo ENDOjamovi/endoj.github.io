@@ -1,0 +1,7 @@
+---
+  title: "About"
+---
+  
+`r modulename` is awesome. 
+
+

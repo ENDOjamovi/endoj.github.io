@@ -1,0 +1,33 @@
+---
+title: "Simple models"
+author: "(Marcello Gallucci)"
+nickname: simplemodels
+topic: general
+category: example
+output: 
+  html_document:
+     includes:
+         in_header: ganalytics.txt
+     toc: true
+     toc_float:
+        collapsed: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r echo=FALSE,results='hide'}
+source("../R/constants.R")
+source("../R/functions.R")
+
+```
+
+
+`r keywords("multiple regression, 2SLS, instrumental variables regression, jamovi")`
+
+`r draft`
+
+In this example we show how to estimate simple regression models with `r modulename`. 
+# Related examples
+`r include_examples("general")`
+
+`r issues()`

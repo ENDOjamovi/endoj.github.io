@@ -1,0 +1,24 @@
+name: "semlj-website"
+output_dir: "../docs/"
+navbar:
+  title: "SEMLj"
+  left:
+  - text: "Help"
+    href:  help.html
+  - text: "Examples"
+    href:  examples.html
+  - text: "Rosetta Store"
+    href:  rosetta.html
+  - text: "Release Notes"
+    href:  release_notes.html
+
+  right: 
+  - text: "View on Github"
+    href: https://github.com/ENDOjamovi/ENDOj
+output:
+  html_document:
+    css: style.css
+    theme: flatly
+
+    
+
