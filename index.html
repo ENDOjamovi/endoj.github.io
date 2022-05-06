@@ -13,7 +13,7 @@
 
 <title>ENDOj: Instrumental variables regression in jamovi</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -66,6 +66,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -90,6 +91,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -242,7 +246,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -283,22 +287,21 @@ $(document).ready(function () {
 
 
 <p>Instrumental variables regression for jamovi based on R package ivreg.</p>
-<p><img src="pics/overview.png" class="img-responsive" alt="overview" width="600"></p>
+<p><img src=" pics/overview.png " class="img-responsive" alt=""></p>
 <div id="help" class="section level2">
 <h2>Help</h2>
-<p>Please visti the <a href="help.html">Help</a> tab for usage information of the module in <span class="jamovi">jamovi</span>. For usage information in R, please visti the ‘SEMLj in R’ tab.</p>
-</div>
-<div id="examples" class="section level2">
-<h2>Examples</h2>
+<p>Please visti the <a href="help.html">Help</a> tab for usage information of the module in <span class="jamovi">jamovi</span>. ## Examples</p>
 <p>Some worked out examples of the analyses carried out with jamovi <span class="modulename">ENDOj</span> are posted in the <a href="examples.html">Examples</a> tab (more to come)</p>
 <ul>
+<li>
+<a href="example1.html">Simple models</a>
+</li>
 </ul>
 </div>
 <div id="installation" class="section level1">
 <h1>Installation</h1>
 <div id="in-jamovi" class="section level2">
 <h2>In jamovi</h2>
-<p><img src="pics/todo.png" class="img-responsive" alt="overview" width="600"></p>
 </div>
 <div id="install-in-r" class="section level2">
 <h2>Install in R</h2>
@@ -319,7 +322,7 @@ devtools::install_github(&quot;ENDOjamovi/ENDOj&quot;)
 Comments?
 </h1>
 <p>
-Got comments, issues or spotted a bug? Please open an issue on <a href="https://github.com/ENDOjamovi/ENDOj/issues "> ENDOj at github“</a> or <a href="mailto:mcfanda@gmail.com">send me an email</a>
+Got comments, issues or spotted a bug? Please open an issue on <a href="https://github.com/ENDOjamovi/ENDOj/issues "> ENDOj at github</a> or <a href="mailto:mcfanda@gmail.com">send me an email</a>
 </p>
 </div>
 
