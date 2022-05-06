@@ -9,6 +9,6 @@ mcdocs_init()
 
 ```
 
-`r modulename` is awesome. 
+`r modulename()` is awesome. 
 
 
