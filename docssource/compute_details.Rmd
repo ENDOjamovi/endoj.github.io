@@ -19,13 +19,14 @@ editor_options:
 
 
 ```{r echo=FALSE,results='hide'}
-source("../R/constants.R")
-source("../R/functions.R")
+library(mcdocs)
+mcdocs_init()
+
 ```
 
 `r keywords("endoj,jamovi, instrumental variables regregression")`
 
-**ENDOj** module details
+**`r modulename()`** module details
 
 `r version("0.1.*")` 
 `r draft`
@@ -39,4 +40,4 @@ source("../R/functions.R")
 
 `r issues()`
 
-'
+

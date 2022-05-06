@@ -2,6 +2,13 @@
   title: "About"
 ---
   
+  
+```{r echo=FALSE,results='hide'}
+library(mcdocs)
+mcdocs_init()
+
+```
+
 `r modulename` is awesome. 
 
 

@@ -12,21 +12,18 @@ editor_options:
 ---
 
 
+
+```{r echo=FALSE,results='hide'}
+library(mcdocs)
+mcdocs_init()
+mcdocs_gh_info()
+write_commits(get_commits())
+
+```
+
 # Releases and changes
 
 
-```{r, echo=FALSE,results='asis', warning=FALSE,message=FALSE}
-where<-"../"
-where=""
-source(paste0(where,"R/constants.R"))
-source(paste0(where,"R/secrets.R"))
-source(paste0(where,"R/functions.R"))
-#source("../R/functions.R")
-#source("../R/functions.R")
-
-#write_commits()
-
-```
 
 
 

@@ -2,10 +2,12 @@
 # do not use the trailing slash
 MODULE_NAME="ENDOj"
 MODULE_FOLDER="/home/marcello/Skinner/Forge/jamovi/endoj/ENDOj/"
+PROJECT_FOLDER="/home/marcello/Skinner/Forge/jamovi/endoj/endoj.github.io/"
 SOURCE_FOLDER="docs"
 TARGET_FOLDER="."
 DATALINK<-""
 MODULE_LINK="https://github.com/ENDOjamovi/ENDOj"
+MODULE_EMAIL="mcfanda@gmail.com"
 
 # These handle the release notes from commits
 MODULE_REPO="ENDOj"
