@@ -13,7 +13,7 @@ editor_options:
 
 
 
-```{r echo=FALSE,results='hide'}
+```{r echo=FALSE,results='asis'}
 library(mcdocs)
 mcdocs_init()
 mcdocs_gh_info()
@@ -21,7 +21,6 @@ write_commits(get_commits())
 
 ```
 
-# Releases and changes
 
 
 

@@ -13,7 +13,7 @@ MODULE_EMAIL="mcfanda@gmail.com"
 # These handle the release notes from commits
 MODULE_REPO="ENDOj"
 MODULE_REPO_OWNER="ENDOjamovi"
-FIRST_VERSION="Version.0.1.0"
+FIRST_VERSION="Version.0.0.0"
 BANNED_COMMITS=list("initialize","fix commits","remove some marks")
 BANNED_COMMITS_GREP=list("^#","^!","^Merge branch","spelling")
 
