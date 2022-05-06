@@ -26,7 +26,7 @@ mcdocs_init()
 
 `r draft`
 
-In this example we show how to estimate simple regression models with `r modulename`. 
+In this example we show how to estimate simple regression models with `r modulename()`. 
 # Related examples
 `r include_examples("general")`
 
