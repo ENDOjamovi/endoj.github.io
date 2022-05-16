@@ -1,5 +1,6 @@
 ---
-title: "Istrumental variables regression for jamovi"
+title: "Instrumental variables regression for jamovi"
+author: Andrea Zagaria
 topic: help
 category: help
 output: 
@@ -23,7 +24,7 @@ mcdocs_init()
 
 ```
 
-`r keywords("pathj,jamovi, path analyis")`
+`r keywords("instrumental regression ,jamovi, two stage least squares")`
 
 **SEMLj** module of Structural Equation Models in jamovi
 
