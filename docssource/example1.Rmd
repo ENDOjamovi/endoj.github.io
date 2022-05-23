@@ -48,7 +48,7 @@ First, we implement a multiple regression model through the standard OLS approac
 
 `r pic("pics/example1/ols.png")`
 
-The B coefficients are found in the “*Parameters Estimates*” table. This table basically shows that the partial standardized regression coefficient linking *insomnia* to *academic* is -.669, p<.001.
+The B coefficients are found in the “*Model coefficients*” table. This table basically shows that the partial standardized regression coefficient linking *insomnia* to *academic* is -.669, p<.001.
 
 `r pic("pics/example1/parametersols.png")`
 
