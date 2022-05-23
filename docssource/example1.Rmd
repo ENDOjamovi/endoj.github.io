@@ -50,7 +50,7 @@ First, we implement a multiple regression model through the standard OLS approac
 
 The B coefficients are found in the “*Parameters Estimates*” table. This table basically shows that the partial standardized regression coefficient linking *insomnia* to *academic* is -.669, p<.001.
 
-`r pic("pics/example1/parametersOLS.png")`
+`r pic("pics/example1/parametersols.png")`
 
 # Two-stages least-squares estimation (2SLS)
 
@@ -61,11 +61,12 @@ Afterwards, we re-run the analysis through the `r modulename()` package addressi
 
 The first table of interest is the “*Model diagnostics*” table which summarizes the diagnostic tests for endogeneity.
 
+The *Weak instruments test* examines the null hypothesis that the instrumental variables are weakly correlated with the endogenous variable (i.e., *insomnia*). A significant p-value suggests that the relevance condiction is satisfied.
+
 The *Wu-Hausman’s specification test* examines the null hypothesis that *insomnia* is exogeneous. A significant p-value, as in the example, provided evidence that *insomnia* is truly endogenous and, therefore, that the 2SLS approach is recommended over the standard OLS regression.
 
 The *Sargan’s test* examines the null hypothesis that the instrumental variables are not correlated with the regression error term. A significant p-value suggests that the instruments do not meet the exclusion restriction condiction. 
 
-The *Weak instruments test* examines the null hypothesis that the instrumental variables are weakly correlated with the endogenous variable (i.e., *insomnia*). A significant p-value suggests that the relevance condiction is satisfied.
 
 `r pic("pics/example1/diagnostics.png")`
 
