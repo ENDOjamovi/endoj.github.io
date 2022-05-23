@@ -1,7 +1,7 @@
 ---
-title: "Simple models"
-author: "(Marcello Gallucci)"
-nickname: simplemodels
+title: "Multiple linear regression"
+author: "(Andrea Zagaria)"
+nickname: Multiple Linear Regression
 topic: general
 category: example
 output: 
@@ -22,11 +22,64 @@ mcdocs_init()
 ```
 
 
+
 `r keywords("multiple regression, 2SLS, instrumental variables regression, jamovi")`
 
-`r draft`
+In this example we show how to implement an instrumental variable regression via two stage least-squares (2SLS) estimation using `r modulename()`.
 
-In this example we show how to estimate simple regression models with `r modulename()`. 
+
+
+
+# Introduction
+
+Ordinary least squares (OLS) linear regression assumes that independent variables are uncorrelated with the outcome's error term. When this assumption is violated, e.g., due to the omitted variable bias or simultaneity, OLS estimates may be inconsistent. A predictor variable that correlates with the error term in a regression equation is called an endogenous variable. Several methods have been proposed to deal with endogeneity issues within a linear regression framework, such as the so-called instrumental variable (IV) regression. `r modulename()` package implements the IV regression via the two-stage least-squares (2SLS) estimation. 2SLS requires the use of external variables, also defined instrumental variables, that are outside the proposed model. Specifically, an instrumental variable has the aim to disentangle the portion of the endogenous variable that is not correlated with the outcome’s error term (i.e., first step), therefore using this predicted portion to explain the criterion variable (i.e., second step). To consistently interpret findings from 2SLS, the instrumental variable should be correlated with the endogenous variable (i.e., the relevance condition) but not with the error term of the model (i.e., the exclusion restriction condiction).
+
+# Research data
+
+To demonstrate how ENDOj work, we propose the following example based on a simulated dataset composed of 350 participants, each with 5 observed variables: *age*, the average number of cigarettes smoked daily (*smoking*); caloric intake before bedtime (*calorie*), insomnia symptoms (*insomnia*), academic performance (*academic*). They are all treated as continuous variables. 
+
+The aim is threefold: (1) test the hypothesized regression model through the standard OLS regression; (2) address potential endogeneity issues by implementing an IV regression via 2SLS estimation; (3) compare findings from these two approaches.
+
+Let’s assume we want to estimate the predictive role of insomnia symptoms on academic performance whilst controlling for age differences. 
+
+# OLS linear regression
+
+First, we implement a multiple regression model through the standard OLS approach defining *academic* as a criterion variable, while *insomnia* and *age* are inserted as predictor variables.
+
+`r pic("pics/example1/ols.png")`
+
+The B coefficients are found in the “*Parameters Estimates*” table. This table basically shows that the partial standardized regression coefficient linking *insomnia* to *academic* is -.669, p<.001.
+
+`r pic("pics/example1/parametersOLS.png")`
+
+# Two-stages least-squares estimation (2SLS)
+
+Afterwards, we re-run the analysis through the `r modulename()` package addressing potential endogeneity issues of *insomnia* (i.e., the case in which insomnia symptoms correlate with the error term in the regression equation) via the 2SLS approach. For the purpose of this example, we define the average number of cigarettes smoked daily (*smoking*) and the calorie intake before bedtime (*calorie*) as external instrumental variables, since both factors have been associated with sleep interference. *Age* is still defined as a covariate. 
+
+`r pic("pics/example1/2sls.png")`
+
+
+The first table of interest is the “*Model diagnostics*” table which summarizes the diagnostic tests for endogeneity.
+
+The *Wu-Hausman’s specification test* examines the null hypothesis that *insomnia* in our example is exogeneous. A significant p-value, as in the example, provided evidence that *insomnia* is truly endogenous and, therefore, that the 2SLS approach is recommended over the standard OLS regression.
+
+The *Sargan’s test* examines the null hypothesis that the instrumental variables are not correlated with the regression error term. A significant p-value suggests that the instrumental variables do not meet the exclusion restriction condiction. 
+
+The *Weak instruments test* examines the null hypothesis that the instrumental variables are weakly correlated with the endogenous variable (i.e., *insomnia*). A significant p-value suggests that the relevance condiction is satisfied.
+
+`r pic("pics/example1/diagnostics.png")`
+
+The model diagnostics suggest that *insomnia* is truly endogenous, thus the implementation of the 2SLS estimation is justified. Also, the instrumental variables correlate with the endogenous variable but not with the regression error term, satisfying the relevance condiction and the exclusion restriction condiction, respectively.
+
+The B coefficients obtained from the 2SLS approach can be found in the “*Parameters Estimates*” table. `r modulename()` provide non-standardized and standardized estimates, standard errors and 95% confidence intervals for each coefficient. As can we see, the partial standardized regression coefficient linking *insomnia* to *academic* is now -.379, p<.001. 
+
+Note that robust standard errors and confidence intervals through the the bootstrap method can also be requested by ticking these options in the "*Model options*" panel. 
+
+`r pic("pics/example1/parameters2sls.png")`
+
+Comparing the 2SLS parameters with the OLS parameters, we observe that the regression coefficient obtained by adopting the 2SLS approach (β=-.379) is far below in size as opposed to the coefficient obtained from standard OLS regression (β=-.669), demonstrating how the latter estimate is inconsistent and upward biased. 
+
+
 # Related examples
 `r include_examples("general")`
 

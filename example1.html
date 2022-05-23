@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="(Marcello Gallucci)" />
+<meta name="author" content="(Andrea Zagaria)" />
 
 
-<title>Simple models</title>
+<title>Multiple linear regression</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -364,18 +364,51 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Simple models</h1>
-<h4 class="author">(Marcello Gallucci)</h4>
+<h1 class="title toc-ignore">Multiple linear regression</h1>
+<h4 class="author">(Andrea Zagaria)</h4>
 
 </div>
 
 
 <p><span class="keywords"> <span class="keytitle"> keywords </span> multiple regression, 2SLS, instrumental variables regression, jamovi </span></p>
-<p><span class="draft"> Draft version, mistakes may be around </span></p>
-In this example we show how to estimate simple regression models with <span class="modulename">ENDOj</span>. # Related examples
+<p>In this example we show how to implement an instrumental variable regression via two stage least-squares (2SLS) estimation using <span class="modulename">ENDOj</span>.</p>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<p>Ordinary least squares (OLS) linear regression assumes that independent variables are uncorrelated with the outcome’s error term. When this assumption is violated, e.g., due to the omitted variable bias or simultaneity, OLS estimates may be inconsistent. A predictor variable that correlates with the error term in a regression equation is called an endogenous variable. Several methods have been proposed to deal with endogeneity issues within a linear regression framework, such as the so-called instrumental variable (IV) regression. <span class="modulename">ENDOj</span> package implements the IV regression via the two-stage least-squares (2SLS) estimation. 2SLS requires the use of external variables, also defined instrumental variables, that are outside the proposed model. Specifically, an instrumental variable has the aim to disentangle the portion of the endogenous variable that is not correlated with the outcome’s error term (i.e., first step), therefore using this predicted portion to explain the criterion variable (i.e., second step). To consistently interpret findings from 2SLS, the instrumental variable should be correlated with the endogenous variable (i.e., the relevance condition) but not with the error term of the model (i.e., the exclusion restriction condiction).</p>
+</div>
+<div id="research-data" class="section level1">
+<h1>Research data</h1>
+<p>To demonstrate how ENDOj work, we propose the following example based on a simulated dataset composed of 350 participants, each with 5 observed variables: <em>age</em>, the average number of cigarettes smoked daily (<em>smoking</em>); caloric intake before bedtime (<em>calorie</em>), insomnia symptoms (<em>insomnia</em>), academic performance (<em>academic</em>). They are all treated as continuous variables.</p>
+<p>The aim is threefold: (1) test the hypothesized regression model through the standard OLS regression; (2) address potential endogeneity issues by implementing an IV regression via 2SLS estimation; (3) compare findings from these two approaches.</p>
+<p>Let’s assume we want to estimate the predictive role of insomnia symptoms on academic performance whilst controlling for age differences.</p>
+</div>
+<div id="ols-linear-regression" class="section level1">
+<h1>OLS linear regression</h1>
+<p>First, we implement a multiple regression model through the standard OLS approach defining <em>academic</em> as a criterion variable, while <em>insomnia</em> and <em>age</em> are inserted as predictor variables.</p>
+<p><img src=" pics/example1/ols.png " class="img-responsive" alt=""></p>
+<p>The B coefficients are found in the “<em>Parameters Estimates</em>” table. This table basically shows that the partial standardized regression coefficient linking <em>insomnia</em> to <em>academic</em> is -.669, p&lt;.001.</p>
+<p><img src=" pics/example1/parametersOLS.png " class="img-responsive" alt=""></p>
+</div>
+<div id="two-stages-least-squares-estimation-2sls" class="section level1">
+<h1>Two-stages least-squares estimation (2SLS)</h1>
+<p>Afterwards, we re-run the analysis through the <span class="modulename">ENDOj</span> package addressing potential endogeneity issues of <em>insomnia</em> (i.e., the case in which insomnia symptoms correlate with the error term in the regression equation) via the 2SLS approach. For the purpose of this example, we define the average number of cigarettes smoked daily (<em>smoking</em>) and the calorie intake before bedtime (<em>calorie</em>) as external instrumental variables, since both factors have been associated with sleep interference. <em>Age</em> is still defined as a covariate.</p>
+<p><img src=" pics/example1/2sls.png " class="img-responsive" alt=""></p>
+<p>The first table of interest is the “<em>Model diagnostics</em>” table which summarizes the diagnostic tests for endogeneity.</p>
+<p>The <em>Wu-Hausman’s specification test</em> examines the null hypothesis that <em>insomnia</em> in our example is exogeneous. A significant p-value, as in the example, provided evidence that <em>insomnia</em> is truly endogenous and, therefore, that the 2SLS approach is recommended over the standard OLS regression.</p>
+<p>The <em>Sargan’s test</em> examines the null hypothesis that the instrumental variables are not correlated with the regression error term. A significant p-value suggests that the instrumental variables do not meet the exclusion restriction condiction.</p>
+<p>The <em>Weak instruments test</em> examines the null hypothesis that the instrumental variables are weakly correlated with the endogenous variable (i.e., <em>insomnia</em>). A significant p-value suggests that the relevance condiction is satisfied.</p>
+<p><img src=" pics/example1/diagnostics.png " class="img-responsive" alt=""></p>
+<p>The model diagnostics suggest that <em>insomnia</em> is truly endogenous, thus the implementation of the 2SLS estimation is justified. Also, the instrumental variables correlate with the endogenous variable but not with the regression error term, satisfying the relevance condiction and the exclusion restriction condiction, respectively.</p>
+<p>The B coefficients obtained from the 2SLS approach can be found in the “<em>Parameters Estimates</em>” table. <span class="modulename">ENDOj</span> provide non-standardized and standardized estimates, standard errors and 95% confidence intervals for each coefficient. As can we see, the partial standardized regression coefficient linking <em>insomnia</em> to <em>academic</em> is now -.379, p&lt;.001.</p>
+<p>Note that robust standard errors and confidence intervals through the the bootstrap method can also be requested by ticking these options in the “<em>Model options</em>” panel.</p>
+<p><img src=" pics/example1/parameters2sls.png " class="img-responsive" alt=""></p>
+<p>Comparing the 2SLS parameters with the OLS parameters, we observe that the regression coefficient obtained by adopting the 2SLS approach (β=-.379) is far below in size as opposed to the coefficient obtained from standard OLS regression (β=-.669), demonstrating how the latter estimate is inconsistent and upward biased.</p>
+</div>
+<div id="related-examples" class="section level1">
+<h1>Related examples</h1>
 <ul>
 <li>
-<a href="example1.html">Simple models</a>
+<a href="example1.html">Multiple linear regression</a>
 </li>
 </ul>
 <h1>
@@ -384,6 +417,7 @@ Comments?
 <p>
 Got comments, issues or spotted a bug? Please open an issue on <a href="https://github.com/ENDOjamovi/ENDOj/issues "> ENDOj at github</a> or <a href="mailto:mcfanda@gmail.com">send me an email</a>
 </p>
+</div>
 
 
 

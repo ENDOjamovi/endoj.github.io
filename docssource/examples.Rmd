@@ -1,6 +1,6 @@
 ---
 title: "Infos"
-author: (Marcello Gallucci)
+author: (Andrea Zagaria)
 output: 
   html_document:
     includes:

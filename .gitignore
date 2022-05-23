@@ -4,3 +4,7 @@
 .Ruserdata
 secrets.*
 R/secrets.R
+*.Rproj
+R/info.R
+*.Rproj
+R/info.R
