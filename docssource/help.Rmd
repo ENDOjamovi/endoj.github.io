@@ -26,7 +26,7 @@ mcdocs_init()
 
 `r keywords("instrumental regression ,jamovi, two stage least squares")`
 
-**SEMLj** module of Structural Equation Models in jamovi
+**ENDOj** module of instrumental variables regression in jamovi
 
 `r version("0.2.*")` 
 `r draft`

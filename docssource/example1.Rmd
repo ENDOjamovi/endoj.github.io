@@ -61,9 +61,9 @@ Afterwards, we re-run the analysis through the `r modulename()` package addressi
 
 The first table of interest is the “*Model diagnostics*” table which summarizes the diagnostic tests for endogeneity.
 
-The *Wu-Hausman’s specification test* examines the null hypothesis that *insomnia* in our example is exogeneous. A significant p-value, as in the example, provided evidence that *insomnia* is truly endogenous and, therefore, that the 2SLS approach is recommended over the standard OLS regression.
+The *Wu-Hausman’s specification test* examines the null hypothesis that *insomnia* is exogeneous. A significant p-value, as in the example, provided evidence that *insomnia* is truly endogenous and, therefore, that the 2SLS approach is recommended over the standard OLS regression.
 
-The *Sargan’s test* examines the null hypothesis that the instrumental variables are not correlated with the regression error term. A significant p-value suggests that the instrumental variables do not meet the exclusion restriction condiction. 
+The *Sargan’s test* examines the null hypothesis that the instrumental variables are not correlated with the regression error term. A significant p-value suggests that the instruments do not meet the exclusion restriction condiction. 
 
 The *Weak instruments test* examines the null hypothesis that the instrumental variables are weakly correlated with the endogenous variable (i.e., *insomnia*). A significant p-value suggests that the relevance condiction is satisfied.
 
