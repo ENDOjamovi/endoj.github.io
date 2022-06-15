@@ -15,9 +15,10 @@ editor_options:
 
 ```{r echo=FALSE,results='asis'}
 library(mcdocs)
-##mcdocs_init()
-##mcdocs_gh_info()
-##write_commits(get_commits())
+mcdocs_init()
+mcdocs_gh_info()
+coms<-get_commits()
+write_commits(coms)
 
 ```
 
