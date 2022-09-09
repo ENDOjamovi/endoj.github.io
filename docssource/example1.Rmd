@@ -38,7 +38,7 @@ Ordinary least squares (OLS) linear regression assumes that independent variable
 
 To demonstrate how ENDOj work, we analysed data provided and described in the *ivreg* package as *SchoolingReturns* (https://cran.r-project.org/web/packages/ivreg/vignettes/ivreg.html). The dataset is taken from the supplementary material for Verbeek (2004) and is based on the work of Card (1995). 
 
-We aimed to investigate the impact of scholing (*education*) on intelligent quotient (*IQ*) by implementing an IV regression via 2SLS estimation. Schooling (*education*) was defined as a predictor variable. The intelligent quotient (*IQ*) was defined as a criterion variable. Within a standard OLS regression, this estimate may be problematic, since it can be argued that *IQ* may suffer from endogeneity issues (i.e., it may be correlated with the regression error term). By employing a 2SLS estimation, we defined father's education *feducation* as the natural exogenous instrument for *education*. To fit this model, we can simply follow the indications represented below: 
+We aimed to investigate the impact of scholing on intelligent quotient by implementing an IV regression via 2SLS estimation. Schooling (*education*) was defined as a predictor variable. The intelligent quotient (*IQ*) was defined as a criterion variable. Within a standard OLS regression, this estimate may be problematic, since it can be argued that *education* may suffer from endogeneity issues (i.e., it may be correlated with the regression error term). By employing a 2SLS estimation, we defined father's education *feducation* as the natural exogenous instrument for *education*. To fit this model, we can simply follow the indications represented below: 
 
 `r pic("pics/example2/definition.png")`
 
