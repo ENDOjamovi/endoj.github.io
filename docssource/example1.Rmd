@@ -38,21 +38,21 @@ Ordinary least squares (OLS) linear regression assumes that independent variable
 
 To demonstrate how ENDOj work, we analysed data provided and described in the *ivreg* package as *SchoolingReturns* (https://cran.r-project.org/web/packages/ivreg/vignettes/ivreg.html). The dataset is taken from the supplementary material for Verbeek (2004) and is based on the work of Card (1995). 
 
-We aimed to investigate the impact of labor-market experience on earnings by implementing an IV regression via 2SLS estimation. The labor-market experience (*experience*) was defined as a predictor variable. The salary (*wage*) was defined as a criterion variable. Within a standard OLS regression, this estimate may be problematic, since it can be argued that *experience* may suffer from endogeneity issues (i.e., it may be correlated with the regression error term). By employing a 2SLS estimation, we defined *age* as the natural exogenous instrument for *experience*. To fit this model, we can simply follow the indications represented below: 
+We aimed to investigate the impact of scholing (*education*) on intelligent quotient (*IQ*) by implementing an IV regression via 2SLS estimation. Schooling (*education*) was defined as a predictor variable. The intelligent quotient (*IQ*) was defined as a criterion variable. Within a standard OLS regression, this estimate may be problematic, since it can be argued that *IQ* may suffer from endogeneity issues (i.e., it may be correlated with the regression error term). By employing a 2SLS estimation, we defined father's education *feducation* as the natural exogenous instrument for *education*. To fit this model, we can simply follow the indications represented below: 
 
 `r pic("pics/example2/definition.png")`
 
 The first table of interest is the “*Model diagnostics*” table which summarizes the diagnostic tests for endogeneity.
 
-The *Weak instruments test* examines the null hypothesis that the instrumental variable (i.e., *age*) is weakly correlated with the endogenous variable (i.e., *experience*). A significant p-value, as in this example, sustains the alternative hypothesis that the instrument is strong (see Stock & Watson, 2015), also ensuring the satisfaction of the instrument relevance condition.
+The *Weak instruments test* examines the null hypothesis that the instrumental variable (i.e., *feducation*) is weakly correlated with the endogenous variable (i.e., *education*). A significant p-value, as in this example, sustains the alternative hypothesis that the instrument is strong (see Stock & Watson, 2015), also ensuring the satisfaction of the instrument relevance condition.
 
-*Wu-Hausman’s specification test* examines the null hypothesis that *experience* satisfies the exogeneity assumption.  A significant p-value, as in the example, provided evidence that *experience* suffers from endogeneity and, therefore, that the 2SLS approach is recommended over the standard OLS regression.
+*Wu-Hausman’s specification test* examines the null hypothesis that *education* satisfies the exogeneity assumption.  A significant p-value, as in the example, sustains the alternative hypothesis that *education* suffers from endogeneity and, therefore, that the 2SLS approach is recommended over the standard OLS regression.
 
 With respect to *Sargan’s test*, note that since the model is just-identified the statistic cannot be computed. For a just-identified model, it is non-viable to formally test whether the instrumental variables are exogenous (see Stock & Watson, 2015).
 
 `r pic("pics/example2/diagnostic2.png")`
 
-Let’s take a look at the *“Parameter Estimates”* table. We show that the unstandardized regression coefficient linking *education* to *wage* was 24.734, p<.001, whilst the standardized regression coefficient was 0.389, p<.001. It basically means that for each additional year of *labor-market experience*, *wage* is expected to increase by 24.734. With respect to the standardized coefficient, a change of 1 standard deviation in *experience* is associated with a change of 0.389 standard deviations in *wage*. 
+Let’s take a look at the *“Parameter Estimates”* table. We show that the unstandardized regression coefficient linking *education* to *IQ* was 5.604, whilst the standardized regression coefficient was 0.972, p<.001. It basically means that for each 1-unit increment of *education*, *IQ* is expected to increase by 5.604. With respect to the standardized coefficient, a change of 1 standard deviation in *education* is associated with a change of 0.972 standard deviations in *IQ*. Moreover, the regression model explained approximately 16% of the variance of *IQ*, 
 
 `r pic("pics/example2/estimates.png")`
 

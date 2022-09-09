@@ -411,30 +411,33 @@ href="https://cran.r-project.org/web/packages/ivreg/vignettes/ivreg.html"
 class="uri">https://cran.r-project.org/web/packages/ivreg/vignettes/ivreg.html</a>).
 The dataset is taken from the supplementary material for Verbeek (2004)
 and is based on the work of Card (1995).</p>
-<p>We aimed to investigate the impact of labor-market experience on
-earnings by implementing an IV regression via 2SLS estimation. The
-labor-market experience (<em>experience</em>) was defined as a predictor
-variable. The salary (<em>wage</em>) was defined as a criterion
-variable. Within a standard OLS regression, this estimate may be
-problematic, since it can be argued that <em>experience</em> may suffer
+<p>We aimed to investigate the impact of scholing (<em>education</em>)
+on intelligent quotient (<em>IQ</em>) by implementing an IV regression
+via 2SLS estimation. Schooling (<em>education</em>) was defined as a
+predictor variable. The intelligent quotient (<em>IQ</em>) was defined
+as a criterion variable. Within a standard OLS regression, this estimate
+may be problematic, since it can be argued that <em>IQ</em> may suffer
 from endogeneity issues (i.e., it may be correlated with the regression
-error term). By employing a 2SLS estimation, we defined <em>age</em> as
-the natural exogenous instrument for <em>experience</em>. To fit this
-model, we can simply follow the indications represented below:</p>
+error term). By employing a 2SLS estimation, we defined father’s
+education <em>feducation</em> as the natural exogenous instrument for
+<em>education</em>. To fit this model, we can simply follow the
+indications represented below:</p>
 <p><img src=" pics/example2/definition.png " class="img-responsive" alt=""></p>
 <p>The first table of interest is the “<em>Model diagnostics</em>” table
 which summarizes the diagnostic tests for endogeneity.</p>
 <p>The <em>Weak instruments test</em> examines the null hypothesis that
-the instrumental variable (i.e., <em>age</em>) is weakly correlated with
-the endogenous variable (i.e., <em>experience</em>). A significant
-p-value, as in this example, sustains the alternative hypothesis that
-the instrument is strong (see Stock &amp; Watson, 2015), also ensuring
-the satisfaction of the instrument relevance condition.</p>
+the instrumental variable (i.e., <em>feducation</em>) is weakly
+correlated with the endogenous variable (i.e., <em>education</em>). A
+significant p-value, as in this example, sustains the alternative
+hypothesis that the instrument is strong (see Stock &amp; Watson, 2015),
+also ensuring the satisfaction of the instrument relevance
+condition.</p>
 <p><em>Wu-Hausman’s specification test</em> examines the null hypothesis
-that <em>experience</em> satisfies the exogeneity assumption. A
-significant p-value, as in the example, provided evidence that
-<em>experience</em> suffers from endogeneity and, therefore, that the
-2SLS approach is recommended over the standard OLS regression.</p>
+that <em>education</em> satisfies the exogeneity assumption. A
+significant p-value, as in the example, sustains the alternative
+hypothesis that <em>education</em> suffers from endogeneity and,
+therefore, that the 2SLS approach is recommended over the standard OLS
+regression.</p>
 <p>With respect to <em>Sargan’s test</em>, note that since the model is
 just-identified the statistic cannot be computed. For a just-identified
 model, it is non-viable to formally test whether the instrumental
@@ -442,13 +445,14 @@ variables are exogenous (see Stock &amp; Watson, 2015).</p>
 <p><img src=" pics/example2/diagnostic2.png " class="img-responsive" alt=""></p>
 <p>Let’s take a look at the <em>“Parameter Estimates”</em> table. We
 show that the unstandardized regression coefficient linking
-<em>education</em> to <em>wage</em> was 24.734, p&lt;.001, whilst the
-standardized regression coefficient was 0.389, p&lt;.001. It basically
-means that for each additional year of <em>labor-market experience</em>,
-<em>wage</em> is expected to increase by 24.734. With respect to the
-standardized coefficient, a change of 1 standard deviation in
-<em>experience</em> is associated with a change of 0.389 standard
-deviations in <em>wage</em>.</p>
+<em>education</em> to <em>IQ</em> was 5.604, whilst the standardized
+regression coefficient was 0.972, p&lt;.001. It basically means that for
+each 1-unit increment of <em>education</em>, <em>IQ</em> is expected to
+increase by 5.604. With respect to the standardized coefficient, a
+change of 1 standard deviation in <em>education</em> is associated with
+a change of 0.972 standard deviations in <em>IQ</em>. Moreover, the
+regression model explained approximately 16% of the variance of
+<em>IQ</em>,</p>
 <p><img src=" pics/example2/estimates.png " class="img-responsive" alt=""></p>
 <p>Note that robust standard errors, as well as confidence intervals
 through the bootstrap approach can be requested by ticking these options
