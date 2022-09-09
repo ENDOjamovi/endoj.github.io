@@ -15,7 +15,7 @@ mcdocs_init()
 ```
   
 
-Instrumental variables regression for jamovi based on R package ivreg.
+Instrumental variables regression via two stage least-squares estimation for jamovi based on R package ivreg.
 
 `r pic("pics/overview.png")`
 
