@@ -32,7 +32,7 @@ Here you can find some applications of `r modulename()` module.
 
 # Rosetta store: results across software
 
-Comparisons with other software: Here you can find comparisons of  results obtained in jamovi module,  and other software, usually jamovi (jmv), pure R, and SPSS. The pages are primarily meant to test convergence between the module and well-established packages, but they can be useful also to check how to get equivalent results across different programs.
+Here you can find comparisons of  results obtained in jamovi module,  and other software, usually jamovi (jmv), pure R, and SPSS. The pages are primarily meant to test convergence between the module and well-established packages, but they can be useful also to check how to get equivalent results across different programs.
 
 
 `r list_pages(category="rosetta")`
