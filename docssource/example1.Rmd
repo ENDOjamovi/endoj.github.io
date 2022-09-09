@@ -38,7 +38,7 @@ Ordinary least squares (OLS) linear regression assumes that independent variable
 
 To demonstrate how ENDOj work, we analysed data provided and described in the *ivreg* package as *SchoolingReturns* (https://cran.r-project.org/web/packages/ivreg/vignettes/ivreg.html). The dataset is taken from the supplementary material for Verbeek (2004) and is based on the work of Card (1995). 
 
-We aimed to investigate the impact of scholing on intelligent quotient by implementing an IV regression via 2SLS estimation. Schooling (*education*) was defined as a predictor variable. The intelligent quotient (*IQ*) was defined as a criterion variable. Within a standard OLS regression, this estimate may be problematic, since it can be argued that *education* may suffer from endogeneity issues (i.e., it may be correlated with the regression error term). By employing a 2SLS estimation, we defined father's education *feducation* as the natural exogenous instrument for *education*. To fit this model, we can simply follow the indications represented below: 
+We aimed to investigate the impact of scholing on intelligent quotient by implementing an IV regression via 2SLS estimation. Schooling (*education*) was defined as a predictor variable. The intelligent quotient (*IQ*) was defined as a criterion variable. Within a standard OLS regression, this estimate may be problematic, since it can be argued that *education* may suffer from endogeneity issues (i.e., it may be correlated with the regression error term). By employing a 2SLS estimation, we defined father's education (*feducation*) as the natural exogenous instrument for *education*. To fit this model, we can simply follow the indications represented below: 
 
 `r pic("pics/example2/definition.png")`
 
@@ -52,7 +52,7 @@ With respect to *Sargan’s test*, note that since the model is just-identified 
 
 `r pic("pics/example2/diagnostic2.png")`
 
-Let’s take a look at the *“Model results”* paragraph. We show that the unstandardized regression coefficient linking *education* to *IQ* was 5.604, whilst the standardized regression coefficient was 0.972, p<.001. It basically means that for each 1-unit increment of *education*, *IQ* is expected to increase by 5.604. With respect to the standardized coefficient, a change of 1 standard deviation in *education* is associated with a change of 0.972 standard deviations in *IQ*. Moreover, the regression model explained approximately 16% of the variance of *IQ*, 
+Let’s take a look at the *“Model results”* paragraph. We highlighted that the unstandardized regression coefficient linking *education* to *IQ* was 5.604, whilst the standardized regression coefficient was 0.972, p<.001. It basically means that for each 1-unit increment of *education*, *IQ* is expected to increase by 5.604. With regards to the standardized coefficient, a change of 1 standard deviation in *education* is associated with a change of 0.972 standard deviations in *IQ*. Moreover, the regression model explained approximately 16% of the variance of *IQ*, 
 
 `r pic("pics/example2/estimates.png")`
 
