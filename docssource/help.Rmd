@@ -26,9 +26,9 @@ mcdocs_init()
 
 `r keywords("instrumental regression ,jamovi, two stage least squares")`
 
-**ENDOj** module of instrumental variables regression in jamovi
+**ENDOj** module of instrumental variables regression via 2SLS estimation in jamovi
 
-`r version("0.2.*")` 
+`r version("≥0.2.*")` 
 `r draft`
 
 
