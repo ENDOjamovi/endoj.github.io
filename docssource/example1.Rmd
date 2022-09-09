@@ -52,7 +52,7 @@ With respect to *Sargan’s test*, note that since the model is just-identified 
 
 `r pic("pics/example2/diagnostic2.png")`
 
-Let’s take a look at the *“Parameter Estimates”* table. We show that the unstandardized regression coefficient linking *education* to *IQ* was 5.604, whilst the standardized regression coefficient was 0.972, p<.001. It basically means that for each 1-unit increment of *education*, *IQ* is expected to increase by 5.604. With respect to the standardized coefficient, a change of 1 standard deviation in *education* is associated with a change of 0.972 standard deviations in *IQ*. Moreover, the regression model explained approximately 16% of the variance of *IQ*, 
+Let’s take a look at the *“Model results”* paragraph. We show that the unstandardized regression coefficient linking *education* to *IQ* was 5.604, whilst the standardized regression coefficient was 0.972, p<.001. It basically means that for each 1-unit increment of *education*, *IQ* is expected to increase by 5.604. With respect to the standardized coefficient, a change of 1 standard deviation in *education* is associated with a change of 0.972 standard deviations in *IQ*. Moreover, the regression model explained approximately 16% of the variance of *IQ*, 
 
 `r pic("pics/example2/estimates.png")`
 
